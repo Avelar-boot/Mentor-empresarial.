@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Mentor Empresarial AI</title>
+
+<style>
+/* =========================
+   FUNDO ESTILO STARTUP
+========================= */
+body{
+margin:0;
+font-family:Arial;
+background: radial-gradient(circle at top, #111827, #0b0f1a);
+color:white;
+}
+
+/* HEADER */
+header{
+padding:20px;
+text-align:center;
+background:#111827;
+font-weight:bold;
+}
+
+/* TELAS (SPA) */
+.screen{
+display:none;
+padding:20px;
+max-width:900px;
+margin:auto;
+}
+
+.active{
+display:block;
+}
+
+/* CARD ESTILO SaaS */
+.card{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+padding:20px;
+border-radius:14px;
+margin-top:15px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* INPUTS */
+input,button,select,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+input,textarea,select{
+background:#111827;
+color:white;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* BOTÕES */
+button{
+background:#4f46e5;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+transform:scale(1.02);
+background:#6366f1;
+}
+
+/* IA FLUTUANTE */
+#iaBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#4f46e5;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(79,70,229,0.5);
+}
+
+/* IA BOX */
+#iaBox{
+position:fixed;
+bottom:90px;
+right:20px;
+width:300px;
+background:#111827;
+padding:10px;
+border-radius:10px;
+display:none;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* TÍTULOS */
+h2{
+margin-top:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>🚀 Mentor Empresarial AI - Startup Platform</header>
+
+<!-- ================= LOGIN ================= -->
+<div id="login" class="screen active">
+<div class="card">
+<h2>🔐 Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="senha" placeholder="Senha">
+
+<button onclick="entrar()">Entrar</button>
+
+<p id="msg"></p>
+</div>
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard" class="screen">
+<div class="card">
+<h2>📊 Dashboard</h2>
+<p>Bem-vindo à sua plataforma de empreendedorismo</p>
+
+<button onclick="ir('testes')">Começar Jornada</button>
+</div>
+</div>
+
+<!-- ================= TESTES ================= -->
+<div id="testes" class="screen">
+<div class="card">
+<h2>🧠 Testes de Perfil</h2>
+<p>DISC • Big Five • Perfil Empreendedor</p>
+
+<div id="quiz"></div>
+
+<button onclick="resultadoTeste()">Finalizar Testes</button>
+
+<div id="resTeste" class="card" style="display:none;"></div>
+</div>
+</div>
+
+<!-- ================= EMPRESA ================= -->
+<div id="empresa" class="screen">
+<div class="card">
+<h2>🏢 Criar Empresa</h2>
+
+<input id="empresa" placeholder="Nome da empresa">
+<input id="nicho" placeholder="Produto ou serviço">
+<input id="capital" placeholder="
